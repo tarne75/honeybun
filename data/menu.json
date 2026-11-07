@@ -1,0 +1,281 @@
+{
+  "business": {
+    "name": "Honeybun",
+    "tagline": "Home of Smash Burgers & Dessert",
+    "phone": "+447480813335",
+    "phoneDisplay": "07480 813335",
+    "address": {
+      "street": "30 The Broadway, Darkes Lane",
+      "town": "Potters Bar",
+      "postcode": "EN6 2HW"
+    },
+    "geo": { "lat": 51.6956145, "lng": -0.193478 },
+    "mapsUrl": "https://maps.app.goo.gl/XFMXCSpoRSMaXLg78",
+    "mapEmbed": "https://www.google.com/maps?q=HONEYBUN+BURGER+AND+DESSERT,+30+The+Broadway,+Darkes+Lane,+Potters+Bar+EN6+2HW&z=17&output=embed",
+    "instagram": "https://www.instagram.com/honeybun_pottersbar/",
+    "instagramHandle": "@honeybun_pottersbar",
+    "order": {
+      "deliveroo": "https://deliveroo.co.uk/menu/london/potters-bar/honeybun-potters-bar-30-the-broadway-darkes-lane",
+      "justeat": "https://www.just-eat.co.uk/restaurants-honeybun-potters-bar/menu"
+    },
+    "hoursNote": "Hours as listed on Just Eat – please check before travelling.",
+    "hours": [
+      { "day": "Mon", "open": "13:00", "close": "00:00" },
+      { "day": "Tue", "open": "13:00", "close": "02:00" },
+      { "day": "Wed", "open": "13:00", "close": "00:00" },
+      { "day": "Thu", "open": "13:00", "close": "02:00" },
+      { "day": "Fri", "open": "13:00", "close": "02:00" },
+      { "day": "Sat", "open": "13:00", "close": "02:00" },
+      { "day": "Sun", "open": "13:00", "close": "02:00" }
+    ]
+  },
+
+  "sauces": ["Mayo & Burger Sauce", "Mayo & Algerian Sauce", "Mayo & Mustard"],
+  "heat": [
+    { "id": "lemon", "label": "Lemon & Herb", "level": 1 },
+    { "id": "mild", "label": "Mild", "level": 2 },
+    { "id": "hot", "label": "Extra Hot", "level": 3 }
+  ],
+
+  "sections": [
+    {
+      "id": "smash",
+      "title": "Smash Burgers",
+      "kicker": "Big Flavour · Fresh Ingredients · Always a Hit",
+      "blurb": "Fresh beef, pressed hard onto a screaming-hot griddle for those lacy, caramelised edges. Every one comes stacked with turkey rashers, pickles, onions, lettuce, cheese and mayo.",
+      "layout": "showcase",
+      "items": [
+        {
+          "id": "double-smash", "fade": true,
+          "name": "Double Smash Burger",
+          "price": 13.99,
+          "badge": "The Big One",
+          "desc": "Two beef patties smashed thin for crispy, caramelised edges, layered with turkey rashers, tangy pickles, onions, crisp lettuce, melted cheese and creamy mayo.",
+          "ingredients": ["2× smash patty", "Turkey rashers", "Pickles", "Onions", "Lettuce", "Cheese", "Mayo"],
+          "sauce": true,
+          "image": "double-smash"
+        },
+        {
+          "id": "single-smash",
+          "name": "Single Smash Burger",
+          "price": 8.99,
+          "desc": "One hand-smashed beef patty seared until crisp, topped with turkey rashers, pickles, diced onions, lettuce, melted cheese and mayo.",
+          "ingredients": ["Smash patty", "Turkey rashers", "Pickles", "Onions", "Lettuce", "Cheese", "Mayo"],
+          "sauce": true,
+          "image": "single-smash"
+        },
+        {
+          "id": "king-gourmet",
+          "name": "King Gourmet Burger",
+          "price": 7.99,
+          "desc": "A thick Americano gourmet beef patty with smoky turkey rashers, crunchy pickles, onions, crisp lettuce, melted cheese and rich mayo.",
+          "ingredients": ["Americano gourmet patty", "Turkey rashers", "Pickles", "Onions", "Lettuce", "Cheese", "Mayo"],
+          "sauce": true,
+          "image": "king-gourmet"
+        },
+        {
+          "id": "king-cheese",
+          "name": "King Cheese Burger",
+          "price": 7.99,
+          "desc": "A seasoned Texan Angus beef patty seared to lock in the juices, layered with turkey rashers, pickles, onions, lettuce and gooey melted cheese.",
+          "ingredients": ["Texan Angus patty", "Turkey rashers", "Pickles", "Onions", "Lettuce", "Cheese", "Mayo"],
+          "sauce": true,
+          "image": "king-cheese"
+        }
+      ]
+    },
+    {
+      "id": "chicken",
+      "title": "Chicken & Wraps",
+      "kicker": "Crispy · Juicy · Full of Flavour",
+      "blurb": "Golden fried chicken with a shatter-crisp coating – in a toasted bun or rolled tight in a warm tortilla.",
+      "layout": "grid",
+      "items": [
+        {
+          "id": "honeybun-chicken",
+          "name": "Honeybun Chicken Burger",
+          "price": 7.99,
+          "badge": "House Fave",
+          "desc": "A thick, golden fried chicken fillet with a shatteringly crisp coating, topped with onions, lettuce and tangy pickles.",
+          "ingredients": ["Fried chicken", "Onions", "Lettuce", "Pickles"],
+          "sauce": true,
+          "image": "honeybun-chicken"
+        },
+        {
+          "id": "flaming-chicken",
+          "name": "Flaming Chicken Burger",
+          "price": 7.99,
+          "spicy": true,
+          "desc": "Extra-crispy spicy fried chicken drenched in fiery sauce, cooled down with mayo, crunchy lettuce, onions and gherkins.",
+          "ingredients": ["Spicy fried chicken", "Spicy mayo", "Lettuce", "Onions", "Gherkins"],
+          "image": "flaming-chicken"
+        },
+        {
+          "id": "chicken-wrap",
+          "name": "Chicken Wrap",
+          "price": 7.99,
+          "desc": "Crispy chicken with lettuce, onions, crunchy pickles and cool mayo, wrapped tight in a warm flour tortilla.",
+          "ingredients": ["Chicken", "Lettuce", "Onions", "Pickles"],
+          "sauce": true,
+          "image": "chicken-wrap"
+        },
+        {
+          "id": "bbq-wrap",
+          "name": "BBQ Chicken Wrap",
+          "price": 7.99,
+          "desc": "Fried chicken tossed in sweet, smoky BBQ sauce and rolled in a toasted tortilla with lettuce, onions and pickles.",
+          "ingredients": ["Fried chicken", "BBQ sauce", "Lettuce", "Onions", "Pickles"],
+          "image": "bbq-wrap"
+        }
+      ]
+    },
+    {
+      "id": "peri",
+      "title": "Peri Peri",
+      "kicker": "Bold Flavours · Packed with Heat",
+      "blurb": "Flame-grilled chicken basted in your choice of heat – from zesty lemon & herb all the way up to extra hot.",
+      "layout": "peri",
+      "groups": [
+        {
+          "title": "Peri Peri Chicken",
+          "items": [
+            { "id": "peri-whole", "name": "Whole", "price": 14.99, "desc": "A whole chicken, marinated and flame-grilled to tender perfection." },
+            { "id": "peri-half", "name": "Half", "price": 8.99, "desc": "Half a chicken, charred and smoky outside, juicy inside." },
+            { "id": "peri-quarter", "name": "Quarter", "price": 5.99, "desc": "A quarter portion, cooked to order." }
+          ]
+        },
+        {
+          "title": "Peri Peri Wings",
+          "items": [
+            { "id": "wings-6", "name": "6 Wings", "price": 5.99, "desc": "Six plump wings, flame-kissed on the grill." },
+            { "id": "wings-10", "name": "10 Wings", "price": 8.99, "desc": "Ten charred wings packed with smoky heat." },
+            { "id": "wings-15", "name": "15 Wings", "price": 12.99, "desc": "A sharing pile of fifteen – bring friends. Or don't." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sides",
+      "title": "Fries & Meal Deal",
+      "kicker": "Perfect with Anything",
+      "blurb": "Make it a meal: add fries and a drink to any burger, chicken, wrap or peri peri order for just £2.99.",
+      "layout": "sides",
+      "mealDeal": { "price": 2.99, "text": "Add fries + a drink to any burger, chicken, wrap or peri peri order." },
+      "items": [
+        { "id": "fries", "name": "Honeybun Fries", "price": 3.49, "veg": true, "desc": "Golden, crunchy and fluffy inside. Served in the famous pink box.", "image": "fries" },
+        { "id": "peri-fries", "name": "Peri Peri Fries", "price": 3.99, "spicy": true, "desc": "Crispy fries tossed in a punchy peri peri and masala seasoning.", "image": "peri-fries" }
+      ]
+    },
+    {
+      "id": "feasts",
+      "title": "Feasts & Bundles",
+      "kicker": "Built to Share · Just Eat Exclusive",
+      "blurb": "Bundles currently available to order on Just Eat.",
+      "layout": "feasts",
+      "items": [
+        { "id": "solo-smash", "name": "Ultimate Solo Smash Feast", "price": 11.98, "desc": "A smash burger with seasoned fries and an ice-cold can." },
+        { "id": "solo-wrap", "name": "Flaming Solo Wrap Box", "price": 10.98, "desc": "Chicken or BBQ chicken wrap with skin-on fries and a cold drink." },
+        { "id": "duo-peri", "name": "Duo Peri Peri Flame Box", "price": 20.97, "desc": "Half a peri peri chicken, ten wings in your heat and two regular fries." },
+        { "id": "partner-pack", "name": "Smash & Cluck Partner Pack", "price": 22.96, "desc": "A Double Smash, a Honeybun Chicken Burger and two meal deal upgrades." },
+        { "id": "royal-feast", "name": "Sovereign Royal Feast", "price": 46.94, "badge": "Feeds the crew", "desc": "A whole peri peri chicken, 15 wings, two King Gourmet Burgers, two fries and two drinks." }
+      ]
+    },
+    {
+      "id": "waffles",
+      "dessert": true,
+      "title": "Waffles & Crêpes",
+      "kicker": "Sweet Treats · Big Flavours · Always Fresh",
+      "blurb": "Freshly made to order – choose a crisp Belgian-style waffle or a soft crêpe.",
+      "layout": "showcase",
+      "items": [
+        { "id": "strawberry-royal", "fade": true, "name": "Strawberry Chocolate Royal", "price": 8.99, "badge": "Bestseller", "desc": "Fresh sliced strawberries drizzled with Nutella sauce and milk chocolate shavings.", "ingredients": ["Fresh strawberries", "Nutella", "Milk chocolate shavings"], "image": "strawberry-royal" },
+        { "id": "oreo-waffle", "fade": true, "name": "O-RE-O", "price": 9.99, "desc": "Oreo cookie crumbs, milk chocolate shavings and white chocolate sauce with Oreo gelato.", "ingredients": ["Oreo crumb", "Milk chocolate", "White chocolate sauce", "Oreo gelato"], "image": "oreo-waffle" },
+        { "id": "rocher", "name": "Rocher", "price": 10.99, "nuts": true, "desc": "Milk chocolate sauce, chopped nuts, Ferrero Rocher and vanilla gelato. Switch it up with Kinder Bueno if you like.", "ingredients": ["Milk chocolate sauce", "Chopped nuts", "Ferrero Rocher", "Vanilla gelato"], "image": "rocher" },
+        { "id": "speculoos", "name": "Speculoos", "price": 8.99, "desc": "Lotus Biscoff crumb and sauce with speculoos gelato.", "ingredients": ["Biscoff crumb", "Biscoff sauce", "Speculoos gelato"], "image": "speculoos" },
+        { "id": "kinder-waffle", "name": "Kinder Bueno", "price": 8.99, "round": true, "nuts": true, "desc": "Our in-house Kinder Bueno waffle or crêpe with chocolate sauce, crunched Bueno and vanilla ice cream.", "ingredients": ["Kinder Bueno", "Chocolate sauce", "Vanilla ice cream"], "image": "kinder-waffle" }
+      ]
+    },
+    {
+      "id": "shakes",
+      "dessert": true,
+      "title": "Milkshakes",
+      "kicker": "Life is Better with a Milkshake",
+      "blurb": "Thick, hand-spun and piled high. £6.99 each.",
+      "layout": "shakes",
+      "items": [
+        { "id": "ms-oreo", "name": "Oreo", "price": 6.99, "desc": "Vanilla ice cream spun with crushed Oreos and chocolate sauce.", "image": "ms-oreo" },
+        { "id": "ms-kinder", "name": "Kinder", "price": 6.99, "nuts": true, "desc": "Kinder Bueno chocolate blended with vanilla ice cream and chocolate sauce.", "image": "ms-kinder" },
+        { "id": "ms-biscoff", "name": "Lotus Biscoff", "price": 6.99, "desc": "Biscoff sauce and Lotus biscuits blended into vanilla ice cream.", "image": "ms-biscoff" },
+        { "id": "ms-snickers", "name": "Snickers", "price": 6.99, "nuts": true, "desc": "Real Snickers, caramel and vanilla ice cream. Contains nuts.", "image": "ms-snickers" },
+        { "id": "ms-chocolate", "name": "Chocolate", "price": 6.99, "desc": "Chocolate ice cream and chocolate sauce. Simple. Perfect.", "image": "ms-chocolate" }
+      ]
+    },
+    {
+      "id": "scoops",
+      "dessert": true,
+      "title": "Ice Cream & Fruit",
+      "kicker": "Dessert Makes Everything Better",
+      "blurb": "Build your own bowl – or top off a waffle.",
+      "layout": "scoops",
+      "groups": [
+        {
+          "title": "Ice Cream",
+          "unit": "per scoop",
+          "price": 2.5,
+          "items": [
+            { "id": "ic-vanilla", "name": "Vanilla", "image": "ic-vanilla" },
+            { "id": "ic-chocolate", "name": "Chocolate", "image": "ic-chocolate" },
+            { "id": "ic-strawberry", "name": "Strawberry", "image": "ic-strawberry" },
+            { "id": "ic-cookies", "name": "Cookies 'n' Cream", "image": "ic-cookies" }
+          ]
+        },
+        {
+          "title": "Fresh Fruit",
+          "unit": "per portion",
+          "price": 1.5,
+          "items": [
+            { "id": "fr-strawberries", "name": "Strawberries", "image": "fr-strawberries" },
+            { "id": "fr-blueberries", "name": "Blueberries", "image": "fr-blueberries" },
+            { "id": "fr-banana", "name": "Banana", "image": "fr-banana" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cakes",
+      "dessert": true,
+      "title": "Cakes",
+      "kicker": "Sweet Endings · Always a Good Idea",
+      "blurb": "A slice of something special – £3.50 each.",
+      "layout": "list",
+      "items": [
+        { "id": "lemon-cheesecake", "name": "Lemon Cheesecake", "price": 3.5 },
+        { "id": "strawberry-cheesecake", "name": "Strawberry Cheesecake", "price": 3.5 },
+        { "id": "biscoff-cheesecake", "name": "Biscoff Cheesecake", "price": 3.5 },
+        { "id": "belgian-chocolate", "name": "Belgian Chocolate Cake", "price": 3.5 },
+        { "id": "red-velvet", "name": "Red Velvet Fudge Cake", "price": 3.5 },
+        { "id": "brownie", "name": "Triple Chocolate Brownie", "price": 3.5 }
+      ]
+    },
+    {
+      "id": "drinks",
+      "title": "Drinks",
+      "kicker": "Refresh · Recharge · Enjoy",
+      "blurb": "Ice-cold 330ml cans.",
+      "layout": "list",
+      "items": [
+        { "id": "coke", "name": "Coca-Cola", "price": 1.99 },
+        { "id": "diet-coke", "name": "Diet Coke", "price": 1.99 },
+        { "id": "fanta", "name": "Fanta Orange", "price": 1.99 },
+        { "id": "sprite", "name": "Sprite", "price": 1.99 },
+        { "id": "dr-pepper", "name": "Dr Pepper", "price": 1.99 },
+        { "id": "water", "name": "Still Water 500ml", "price": 1.49 }
+      ]
+    }
+  ],
+
+  "instagram": {
+    "comment": "Add posts here to switch on the Instagram grid. Each post: { \"image\": \"assets/img/insta/xxx.webp\", \"alt\": \"...\", \"url\": \"https://www.instagram.com/p/...\" }",
+    "posts": []
+  }
+}

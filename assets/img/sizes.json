@@ -1,0 +1,126 @@
+{
+ "bbq-wrap": {
+  "w": 1061,
+  "h": 900
+ },
+ "chicken-wrap": {
+  "w": 730,
+  "h": 586
+ },
+ "double-smash": {
+  "w": 1086,
+  "h": 900
+ },
+ "flaming-chicken": {
+  "w": 746,
+  "h": 576
+ },
+ "fr-banana": {
+  "w": 871,
+  "h": 631
+ },
+ "fr-blueberries": {
+  "w": 788,
+  "h": 670
+ },
+ "fr-strawberries": {
+  "w": 1007,
+  "h": 589
+ },
+ "fries": {
+  "w": 1200,
+  "h": 710
+ },
+ "honeybun-chicken": {
+  "w": 1100,
+  "h": 895
+ },
+ "ic-chocolate": {
+  "w": 587,
+  "h": 594
+ },
+ "ic-cookies": {
+  "w": 986,
+  "h": 675
+ },
+ "ic-strawberry": {
+  "w": 1029,
+  "h": 675
+ },
+ "ic-vanilla": {
+  "w": 979,
+  "h": 670
+ },
+ "kinder-waffle": {
+  "w": 860,
+  "h": 860
+ },
+ "king-cheese": {
+  "w": 843,
+  "h": 670
+ },
+ "king-gourmet": {
+  "w": 1200,
+  "h": 884
+ },
+ "ms-biscoff": {
+  "w": 681,
+  "h": 901
+ },
+ "ms-chocolate": {
+  "w": 840,
+  "h": 900
+ },
+ "ms-kinder": {
+  "w": 617,
+  "h": 788
+ },
+ "ms-oreo": {
+  "w": 500,
+  "h": 670
+ },
+ "ms-snickers": {
+  "w": 443,
+  "h": 602
+ },
+ "oreo-waffle": {
+  "w": 1164,
+  "h": 900
+ },
+ "peri-fries": {
+  "w": 561,
+  "h": 627
+ },
+ "rocher": {
+  "w": 1054,
+  "h": 650
+ },
+ "single-smash": {
+  "w": 731,
+  "h": 626
+ },
+ "speculoos": {
+  "w": 506,
+  "h": 374
+ },
+ "strawberry-royal": {
+  "w": 994,
+  "h": 816
+ },
+ "double-smash-burger": {
+  "w": 1200,
+  "h": 900
+ },
+ "flaming-chicken-burger": {
+  "w": 1200,
+  "h": 900
+ },
+ "king-cheese-burger": {
+  "w": 1200,
+  "h": 900
+ },
+ "normal-fries": {
+  "w": 1200,
+  "h": 900
+ }
+}

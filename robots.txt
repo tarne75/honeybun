@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tarne75.github.io/honeybun/sitemap.xml
