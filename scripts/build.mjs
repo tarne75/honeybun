@@ -46,7 +46,7 @@ const marquee = (words) => {
 };
 
 /* ---- hours ---- */
-const HOURS = b.hours.map((h) => `<dt>${h.day}</dt><dd>${h.open} – ${h.close === '00:00' ? 'Midnight' : h.close}</dd>`).join('');
+const HOURS = b.hours.map((h) => `<dt>${h.day}</dt><dd>${h.open} - ${h.close === '00:00' ? 'Midnight' : h.close}</dd>`).join('');
 
 /* ---- structured data ---- */
 const dayMap = { Mon: 'Monday', Tue: 'Tuesday', Wed: 'Wednesday', Thu: 'Thursday', Fri: 'Friday', Sat: 'Saturday', Sun: 'Sunday' };

@@ -109,7 +109,7 @@ const layouts = {
 
   sides: (s, data) => {
     const mains = data.sections.filter((x) => ['smash', 'chicken'].includes(x.id)).flatMap((x) => x.items)
-      .concat(data.sections.find((x) => x.id === 'peri')?.groups.flatMap((g) => g.items.map((it) => ({ ...it, name: `${g.title.replace('Peri Peri ', 'Peri ')} – ${it.name}` }))) ?? []);
+      .concat(data.sections.find((x) => x.id === 'peri')?.groups.flatMap((g) => g.items.map((it) => ({ ...it, name: `${g.title.replace('Peri Peri ', 'Peri ')} - ${it.name}` }))) ?? []);
     return `<div class="sides">
       <div class="sides__items">${s.items.map((it) => `
         <button class="side io" type="button" data-item="${it.id}">
@@ -122,7 +122,7 @@ const layouts = {
       <form class="deal io" id="deal" onsubmit="return false">
         <h3>Meal Deal<br>for ${gbp(s.mealDeal.price)}</h3>
         <p class="deal__lede">${esc(s.mealDeal.text)}</p>
-        <label for="deal-main">Build yours – pick a main</label>
+        <label for="deal-main">Build yours - pick a main</label>
         <select id="deal-main">${mains.map((m) => `<option value="${m.price}">${esc(m.name)} · ${gbp(m.price)}</option>`).join('')}</select>
         <dl class="deal__sum">
           <div><dt>Your main</dt><dd id="deal-a"></dd></div>
@@ -299,7 +299,7 @@ function setupSheet(data) {
 function setupHeat(data) {
   const sec = $('#peri');
   if (!sec) return;
-  const notes = { lemon: 'Zesty, fresh & gentle', mild: 'A warm kick of chilli', hot: 'Seriously fiery – you were warned' };
+  const notes = { lemon: 'Zesty, fresh & gentle', mild: 'A warm kick of chilli', hot: 'Seriously fiery - you were warned' };
   const flames = $$('.heat__flames svg', sec);
   const txt = $('.heat__txt', sec);
   const set = (id) => {

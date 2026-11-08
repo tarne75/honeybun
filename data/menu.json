@@ -18,7 +18,7 @@
       "deliveroo": "https://deliveroo.co.uk/menu/london/potters-bar/honeybun-potters-bar-30-the-broadway-darkes-lane",
       "justeat": "https://www.just-eat.co.uk/restaurants-honeybun-potters-bar/menu"
     },
-    "hoursNote": "Hours as listed on Just Eat – please check before travelling.",
+    "hoursNote": "Hours as listed on Just Eat - please check before travelling.",
     "hours": [
       { "day": "Mon", "open": "13:00", "close": "00:00" },
       { "day": "Tue", "open": "13:00", "close": "02:00" },
@@ -89,7 +89,7 @@
       "id": "chicken",
       "title": "Chicken & Wraps",
       "kicker": "Crispy · Juicy · Full of Flavour",
-      "blurb": "Golden fried chicken with a shatter-crisp coating – in a toasted bun or rolled tight in a warm tortilla.",
+      "blurb": "Golden fried chicken with a shatter-crisp coating - in a toasted bun or rolled tight in a warm tortilla.",
       "layout": "grid",
       "items": [
         {
@@ -135,7 +135,7 @@
       "hidden": true,
       "title": "Peri Peri",
       "kicker": "Bold Flavours · Packed with Heat",
-      "blurb": "Flame-grilled chicken basted in your choice of heat – from zesty lemon & herb all the way up to extra hot.",
+      "blurb": "Flame-grilled chicken basted in your choice of heat - from zesty lemon & herb all the way up to extra hot.",
       "layout": "peri",
       "groups": [
         {
@@ -151,7 +151,7 @@
           "items": [
             { "id": "wings-6", "name": "6 Wings", "price": 5.99, "desc": "Six plump wings, flame-kissed on the grill." },
             { "id": "wings-10", "name": "10 Wings", "price": 8.99, "desc": "Ten charred wings packed with smoky heat." },
-            { "id": "wings-15", "name": "15 Wings", "price": 12.99, "desc": "A sharing pile of fifteen – bring friends. Or don't." }
+            { "id": "wings-15", "name": "15 Wings", "price": 12.99, "desc": "A sharing pile of fifteen - bring friends. Or don't." }
           ]
         }
       ]
@@ -191,7 +191,7 @@
       "dessert": true,
       "title": "Waffles & Crêpes",
       "kicker": "Sweet Treats · Big Flavours · Always Fresh",
-      "blurb": "Freshly made to order – choose a crisp Belgian-style waffle or a soft crêpe.",
+      "blurb": "Freshly made to order - choose a crisp Belgian-style waffle or a soft crêpe.",
       "layout": "showcase",
       "items": [
         { "id": "strawberry-royal", "fade": true, "name": "Strawberry Chocolate Royal", "price": 8.99, "badge": "Bestseller", "desc": "Fresh sliced strawberries drizzled with Nutella sauce and milk chocolate shavings.", "ingredients": ["Fresh strawberries", "Nutella", "Milk chocolate shavings"], "image": "strawberry-royal" },
@@ -221,7 +221,7 @@
       "dessert": true,
       "title": "Ice Cream & Fruit",
       "kicker": "Dessert Makes Everything Better",
-      "blurb": "Build your own bowl – or top off a waffle.",
+      "blurb": "Build your own bowl - or top off a waffle.",
       "layout": "scoops",
       "groups": [
         {
@@ -253,7 +253,7 @@
       "dessert": true,
       "title": "Cakes",
       "kicker": "Sweet Endings · Always a Good Idea",
-      "blurb": "A slice of something special – £3.50 each.",
+      "blurb": "A slice of something special - £3.50 each.",
       "layout": "list",
       "items": [
         { "id": "lemon-cheesecake", "name": "Lemon Cheesecake", "price": 3.5 },
