@@ -2,7 +2,7 @@
   "name": "honeybun",
   "private": true,
   "version": "1.0.0",
-  "description": "Honeybun Potters Bar – smash burgers & dessert. Static single-page menu site for GitHub Pages.",
+  "description": "Honeybun Potters Bar \u2013 smash burgers & dessert. Static single-page menu site for GitHub Pages.",
   "type": "module",
   "scripts": {
     "images": "node scripts/images.mjs",
@@ -13,6 +13,9 @@
   "devDependencies": {
     "esbuild": "^0.25.0",
     "lightningcss": "^1.29.0",
-    "sharp": "^0.34.0"
+    "sharp": "^0.35.5"
+  },
+  "engines": {
+    "node": ">=20.11"
   }
 }

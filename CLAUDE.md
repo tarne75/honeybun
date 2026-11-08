@@ -44,7 +44,7 @@ Drop a transparent WebP/PNG into `src/images/food/<id>.webp` (background removed
 ## Commands
 
 ```
-npm install          # sharp, esbuild, lightningcss (dev only)
+npm install          # sharp, esbuild, lightningcss (dev only) – needs Node 20.11+ (see .nvmrc)
 npm run build        # → index.html + data/menu.js
 npm run images       # → assets/img/** (only when source images change)
 npm run serve        # local http server (gzip) at http://localhost:4173/honeybun/
