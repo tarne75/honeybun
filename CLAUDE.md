@@ -35,6 +35,8 @@ On the live site the menu is fetched from `data/menu.json` at runtime, so menu-i
 
 Item fields: `id, name, price, desc, ingredients[], image (file stem in assets/img/food), badge, spicy, nuts, veg, sauce (shows the 3 sauce choices), round, fade`. Section `layout` chooses the design: `showcase | grid | peri | sides | feasts | shakes | scoops | list`. Sections with `"dessert": true` sit inside the pink "Dessert Express" zone.
 
+**Temporarily hiding things**: add `"hidden": true` to a section, a group (peri/scoops boards) or an item. It stays in the JSON (images, text, prices intact) but is filtered out at load (`pruneHidden` in app.js) – no nav chip, no sheet entry, not in the meal-deal picker. Delete the flag (or set `false`) to bring it back. ⚠️ Hiding a section doesn't touch copy that *mentions* it elsewhere (hero, meta tags, marquee, bundles, meal-deal text).
+
 **Instagram**: add objects to `instagram.posts` (`{ "image", "alt", "url" }`) and the grid switches on automatically. Empty = a "Follow" panel.
 
 ## Adding / changing food images

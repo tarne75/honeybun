@@ -132,6 +132,7 @@
     },
     {
       "id": "peri",
+      "hidden": true,
       "title": "Peri Peri",
       "kicker": "Bold Flavours · Packed with Heat",
       "blurb": "Flame-grilled chicken basted in your choice of heat – from zesty lemon & herb all the way up to extra hot.",

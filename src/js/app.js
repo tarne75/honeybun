@@ -30,6 +30,19 @@ async function loadMenu() {
   }
 }
 
+// Temporarily take things off the menu without deleting them: set "hidden": true on a
+// section, a group, or an item in data/menu.json. Hidden entries are dropped here, before
+// anything renders, so nav chips, the item sheet and the meal-deal picker all skip them.
+const shown = (x) => !x.hidden;
+const pruneHidden = (data) => ({
+  ...data,
+  sections: data.sections.filter(shown).map((s) => ({
+    ...s,
+    ...(s.items && { items: s.items.filter(shown) }),
+    ...(s.groups && { groups: s.groups.filter(shown).map((g) => ({ ...g, items: g.items.filter(shown) })) }),
+  })),
+});
+
 /* ---------- image helper ---------- */
 const pic = (name, { alt = '', sizes = '(min-width: 900px) 40vw, 90vw', eager = false } = {}) => `
   <picture>
@@ -434,7 +447,7 @@ setupParallax();
 setupMap();
 $('#year').textContent = new Date().getFullYear();
 
-const data = await loadMenu();
+const data = pruneHidden(await loadMenu());
 await renderShells(data);
 for (const task of [() => bindBusiness(data.business), () => setupStatus(data), () => setupSheet(data), setupSpy, () => setupInsta(data)]) {
   await yieldToMain();
