@@ -539,6 +539,7 @@
   .map__load { position: absolute; left: 50%; bottom: 18px; translate: -50% 0; }
   .map.is-live .map__pin, .map.is-live .map__load { display: none; }
   .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 28px; margin-top: clamp(40px, 6vw, 70px); border-top: 1px solid #ffffff12; color: #b49aac; font-size: .85rem; }
+  .legal__end { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-left: auto; }
 
   /* ---------- Item sheet (dialog) ----------
      Mobile: compact bottom sheet. The dialog itself never scrolls (only .sheet__inner does),

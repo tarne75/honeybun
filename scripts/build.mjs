@@ -101,6 +101,7 @@ html = html
   .replace('{{HOURS}}', () => HOURS)
   .replace('{{MARQUEE_A}}', () => marquee(['Smash Burgers', 'Crispy Chicken', 'Peri Peri', 'Loaded Waffles', 'Thick Shakes', 'Open Late']))
   .replace('{{MARQUEE_B}}', () => marquee(['Home of Smash Burgers', 'Dessert Express', 'Potters Bar', 'Good Food', 'Good Vibes']))
+  .replace('{{ADDRESS}}', () => [...b.address.street.split(/\s*,\s*/), b.address.town, b.address.postcode].map((x) => x.replace(/&(?!amp;)/g, '&amp;')).join(',<br>'))
   .replace(/{{(\w+)}}/g, (m, k) => {
     if (!(k in vars)) throw new Error(`Unknown placeholder ${m}`);
     return String(vars[k]).replace(/&(?!amp;)/g, '&amp;');
