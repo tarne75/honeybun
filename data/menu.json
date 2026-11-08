@@ -249,6 +249,7 @@
     },
     {
       "id": "cakes",
+      "hidden": true,
       "dessert": true,
       "title": "Cakes",
       "kicker": "Sweet Endings · Always a Good Idea",

@@ -474,6 +474,8 @@
   @media (min-width: 900px) { .duo { grid-template-columns: 1fr 1fr; } }
   .duo { padding-block: clamp(64px, 10vw, 140px); }
   .duo .menu-section { padding-block: 0; }
+  /* Partner list section hidden ("hidden": true) → the survivor spans the row, capped for readable leaders. */
+  .duo > .menu-section:only-child { grid-column: 1 / -1; max-width: 720px; }
   .duo .sec-head { margin-bottom: 26px; }
   .duo .sec-head__title { font-size: clamp(2.8rem, 1.5rem + 4vw, 5rem); }
 
