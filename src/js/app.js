@@ -233,8 +233,9 @@ function setupSheet(data) {
         </div>
         <p class="sheet__note">Allergies? Please speak to us before ordering.</p>
       </div>`;
-    const show = () => sheet.showModal();
-    document.startViewTransition && !reduced ? document.startViewTransition(show) : show();
+    inner.scrollTop = 0;
+    sheet.showModal();
+    history.pushState({ hbSheet: true }, '');
   };
 
   document.addEventListener('click', (e) => {
@@ -244,7 +245,28 @@ function setupSheet(data) {
   sheet.addEventListener('click', (e) => {
     if (e.target === sheet || e.target.closest('[data-close]')) sheet.close();
   });
-  sheet.addEventListener('close', () => lastTrigger?.focus({ preventScroll: true }));
+  sheet.addEventListener('close', () => {
+    if (history.state?.hbSheet) history.back(); // closed via ✕/backdrop/swipe – drop our history entry
+    lastTrigger?.focus({ preventScroll: true });
+  });
+  // Phone "Back" gesture/button closes the sheet instead of leaving the page
+  addEventListener('popstate', () => { if (sheet.open) sheet.close(); });
+
+  // Swipe down to dismiss (only when the sheet content is scrolled to the top)
+  let y0 = null, dy = 0;
+  sheet.addEventListener('touchstart', (e) => { y0 = inner.scrollTop <= 0 ? e.touches[0].clientY : null; dy = 0; }, { passive: true });
+  sheet.addEventListener('touchmove', (e) => {
+    if (y0 === null) return;
+    dy = Math.max(0, e.touches[0].clientY - y0);
+    sheet.style.transform = dy ? `translateY(${dy}px)` : '';
+  }, { passive: true });
+  sheet.addEventListener('touchend', () => {
+    sheet.style.transition = 'transform .25s';
+    if (dy > 110) sheet.close();
+    sheet.style.transform = '';
+    setTimeout(() => (sheet.style.transition = ''), 260);
+    y0 = null;
+  });
 }
 
 /* ---------- peri heat selector ---------- */

@@ -51,7 +51,7 @@
 @layer reset {
   *, *::before, *::after { box-sizing: border-box; }
   * { margin: 0; }
-  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 64px); }
+  html { touch-action: manipulation; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 64px); }
   body { min-height: 100svh; line-height: 1.55; -webkit-font-smoothing: antialiased; }
   img, picture, svg, video, iframe { display: block; max-width: 100%; }
   input, button, select { font: inherit; color: inherit; }
@@ -540,34 +540,44 @@
   .map.is-live .map__pin, .map.is-live .map__load { display: none; }
   .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 28px; margin-top: clamp(40px, 6vw, 70px); border-top: 1px solid #ffffff12; color: #b49aac; font-size: .85rem; }
 
-  /* ---------- Item sheet (dialog) ---------- */
+  /* ---------- Item sheet (dialog) ----------
+     Mobile: compact bottom sheet. The dialog itself never scrolls (only .sheet__inner does),
+     so the close button is always in reach. Closes via ✕, backdrop tap, swipe-down or Back. */
   .sheet {
     --accent: var(--pink);
-    width: min(100%, 920px); max-width: 100%; max-height: min(92svh, 860px); margin: auto auto 0; padding: 0; border: 0;
-    border-radius: 28px 28px 0 0; color: var(--cream); background: linear-gradient(170deg, var(--plum), var(--ink-2) 55%);
-    box-shadow: 0 -20px 80px -10px color-mix(in oklab, var(--pink) 45%, #000); overflow: auto; overscroll-behavior: contain;
-    &::backdrop { background: #000b; backdrop-filter: blur(6px); }
-    &[open] { animation: sheet-up .5s var(--ease-out); }
-    &[open]::backdrop { animation: fade .4s; }
+    width: 100%; max-width: 100%; max-height: 86svh; margin: auto auto 0; padding: 0; border: 0;
+    border-radius: 26px 26px 0 0; color: var(--cream); background: linear-gradient(170deg, var(--plum), var(--ink-2) 55%);
+    box-shadow: 0 -20px 80px -10px color-mix(in oklab, var(--pink) 45%, #000); overflow: hidden;
+    &[open] { display: flex; flex-direction: column; animation: sheet-up .45s var(--ease-out); }
+    &::backdrop { background: #000c; }
+    &[open]::backdrop { animation: fade .3s; }
   }
-  @media (min-width: 760px) { .sheet { margin: auto; border-radius: 28px; } }
-  .sheet__inner { display: grid; gap: 0; }
-  @media (min-width: 760px) { .sheet__inner { grid-template-columns: 1.1fr 1fr; align-items: center; } }
-  .sheet__media { position: relative; display: grid; place-items: center; padding: 34px 20px 0; min-height: 220px; isolation: isolate; }
+  .sheet__grab { flex: none; width: 44px; height: 5px; margin: 10px auto 0; border-radius: 99px; background: #ffffff40; }
+  .sheet__inner { display: grid; min-height: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+  .sheet__media { position: relative; display: grid; place-items: center; padding: 8px 56px 0; isolation: isolate; }
   .sheet__media::before { content: ""; position: absolute; inset: 15%; z-index: -1; border-radius: 50%; background: radial-gradient(closest-side, color-mix(in oklab, var(--pink) 55%, transparent), transparent); filter: blur(12px); }
-  .sheet__media img { width: 100%; max-height: 46svh; object-fit: contain; filter: drop-shadow(0 26px 26px #000c); }
-  .sheet__body { display: grid; gap: 14px; padding: 24px clamp(20px, 4vw, 40px) 32px; justify-items: start; }
-  .sheet__name { font-family: var(--f-display); text-transform: uppercase; font-size: clamp(2.2rem, 1.6rem + 2.4vw, 3.4rem); line-height: .92; }
+  .sheet__media img { width: auto; max-width: 100%; height: auto; max-height: 30svh; object-fit: contain; filter: drop-shadow(0 18px 20px #000c); }
+  .sheet__body { display: grid; gap: 12px; padding: 16px 20px calc(24px + env(safe-area-inset-bottom)); justify-items: start; }
+  .sheet__name { font-family: var(--f-display); text-transform: uppercase; font-size: clamp(2rem, 1.6rem + 2.4vw, 3.4rem); line-height: .92; }
   .sheet__desc { color: var(--muted); }
   .sheet h3 { font-weight: 800; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--pink-soft); }
-  .sheet__ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+  .sheet__ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
   .sheet__ctas .btn { min-height: 48px; font-size: .95rem; }
   .sheet__close {
-    position: sticky; top: 12px; float: right; margin: 12px 12px -54px 0; z-index: 2;
-    width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: #000a; border: 1px solid #ffffff25; color: var(--cream);
+    position: absolute; top: 14px; right: 14px; z-index: 3;
+    width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: #000c; border: 1px solid #ffffff30; color: var(--cream);
     &:hover { background: var(--pink); color: var(--ink); }
   }
   .sheet__note { font-size: .8rem; color: #b49aac; }
+  html:has(.sheet[open]) { overflow: hidden; }
+  @media (min-width: 760px) {
+    .sheet { width: min(100% - 48px, 920px); max-height: min(88svh, 760px); margin: auto; border-radius: 28px; }
+    .sheet__grab { display: none; }
+    .sheet__inner { grid-template-columns: 1.1fr 1fr; align-items: center; }
+    .sheet__media { padding: 40px 24px; }
+    .sheet__media img { width: 100%; max-height: 60svh; }
+    .sheet__body { padding: 40px; }
+  }
 
   .noscript-menu { padding-block: 80px; text-align: center; }
 }
