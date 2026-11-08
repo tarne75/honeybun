@@ -160,9 +160,13 @@
       "id": "sides",
       "title": "Fries & Meal Deal",
       "kicker": "Perfect with Anything",
-      "blurb": "Make it a meal: add fries and a drink to any burger, chicken, wrap or peri peri order for just £2.99.",
+      "blurb": "Make it a meal: add fries and a drink to any burger, chicken or wrap order for just £2.99.",
+      "_whenPeriReturns": {
+        "blurb": "Make it a meal: add fries and a drink to any burger, chicken, wrap or peri peri order for just £2.99.",
+        "mealDealText": "Add fries + a drink to any burger, chicken, wrap or peri peri order."
+      },
       "layout": "sides",
-      "mealDeal": { "price": 2.99, "text": "Add fries + a drink to any burger, chicken, wrap or peri peri order." },
+      "mealDeal": { "price": 2.99, "text": "Add fries + a drink to any burger, chicken or wrap order." },
       "items": [
         { "id": "fries", "name": "Honeybun Fries", "price": 3.49, "veg": true, "desc": "Golden, crunchy and fluffy inside. Served in the famous pink box.", "image": "fries" },
         { "id": "peri-fries", "name": "Peri Peri Fries", "price": 3.99, "spicy": true, "desc": "Crispy fries tossed in a punchy peri peri and masala seasoning.", "image": "peri-fries" }
@@ -177,9 +181,9 @@
       "items": [
         { "id": "solo-smash", "name": "Ultimate Solo Smash Feast", "price": 11.98, "desc": "A smash burger with seasoned fries and an ice-cold can." },
         { "id": "solo-wrap", "name": "Flaming Solo Wrap Box", "price": 10.98, "desc": "Chicken or BBQ chicken wrap with skin-on fries and a cold drink." },
-        { "id": "duo-peri", "name": "Duo Peri Peri Flame Box", "price": 20.97, "desc": "Half a peri peri chicken, ten wings in your heat and two regular fries." },
+        { "id": "duo-peri", "hidden": true, "name": "Duo Peri Peri Flame Box", "price": 20.97, "desc": "Half a peri peri chicken, ten wings in your heat and two regular fries." },
         { "id": "partner-pack", "name": "Smash & Cluck Partner Pack", "price": 22.96, "desc": "A Double Smash, a Honeybun Chicken Burger and two meal deal upgrades." },
-        { "id": "royal-feast", "name": "Sovereign Royal Feast", "price": 46.94, "badge": "Feeds the crew", "desc": "A whole peri peri chicken, 15 wings, two King Gourmet Burgers, two fries and two drinks." }
+        { "id": "royal-feast", "hidden": true, "name": "Sovereign Royal Feast", "price": 46.94, "badge": "Feeds the crew", "desc": "A whole peri peri chicken, 15 wings, two King Gourmet Burgers, two fries and two drinks." }
       ]
     },
     {
