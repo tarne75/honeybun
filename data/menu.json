@@ -36,6 +36,7 @@
     { "id": "mild", "label": "Mild", "level": 2 },
     { "id": "hot", "label": "Extra Hot", "level": 3 }
   ],
+  "defaultHeat": "lemon",
 
   "sections": [
     {

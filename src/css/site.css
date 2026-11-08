@@ -320,7 +320,7 @@
   /* ---------- Grid cards (image breaks out of card) ---------- */
   .cards { display: grid; gap: 96px clamp(20px, 3vw, 32px); grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); padding-top: 60px; }
   .card {
-    position: relative; display: grid; align-content: end; gap: 10px; min-height: 100%;
+    position: relative; display: grid; align-content: end; align-self: stretch; gap: 10px;
     padding: clamp(140px, 30vw, 190px) 22px 22px; margin-top: 60px; border-radius: var(--radius); text-align: left; cursor: pointer;
     background: linear-gradient(170deg, color-mix(in oklab, var(--plum) 70%, transparent), var(--ink-2) 60%);
     border: 1px solid #ffffff12;
@@ -569,7 +569,6 @@
     &:hover { background: var(--pink); color: var(--ink); }
   }
   .sheet__note { font-size: .8rem; color: #b49aac; }
-  html:has(.sheet[open]) { overflow: hidden; }
   @media (min-width: 760px) {
     .sheet { width: min(100% - 48px, 920px); max-height: min(88svh, 760px); margin: auto; border-radius: 28px; }
     .sheet__grab { display: none; }

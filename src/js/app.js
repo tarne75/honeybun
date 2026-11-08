@@ -85,7 +85,7 @@ const layouts = {
   peri: (s, data) => `
     <fieldset class="heat" id="heat">
       <legend>Choose your heat</legend>
-      ${data.heat.map((h, i) => `<input type="radio" name="heat" id="heat-${h.id}" value="${h.id}" ${i === 2 ? 'checked' : ''}><label for="heat-${h.id}">${esc(h.label)}<span>${'●'.repeat(h.level)}</span></label>`).join('')}
+      ${data.heat.map((h, i) => `<input type="radio" name="heat" id="heat-${h.id}" value="${h.id}" ${h.id === (data.defaultHeat || data.heat[0].id) ? 'checked' : ''}><label for="heat-${h.id}">${esc(h.label)}<span>${'●'.repeat(h.level)}</span></label>`).join('')}
     </fieldset>
     <p class="heat__meter" aria-live="polite"><span class="heat__flames">${'<svg aria-hidden="true"><use href="#i-flame"/></svg>'.repeat(3)}</span><span class="heat__txt"></span></p>
     <div class="boards">${s.groups.map((g) => `
@@ -184,7 +184,7 @@ async function renderShells(data) {
     if (!list) duo = null;
     const peri = s.layout === 'peri';
     const body = `${head(s, i)}<div class="sec-body" data-fill="${i}"></div>`;
-    add(list ? duo : target, `<section class="menu-section${peri ? ' peri' : ''}" id="${s.id}" aria-labelledby="${s.id}-title"${peri ? ' data-heat="hot"' : ''}>${list ? body : `<div class="wrap">${body}</div>`}</section>`);
+    add(list ? duo : target, `<section class="menu-section${peri ? ' peri' : ''}" id="${s.id}" aria-labelledby="${s.id}-title"${peri ? ` data-heat="${data.defaultHeat || data.heat[0].id}"` : ''}>${list ? body : `<div class="wrap">${body}</div>`}</section>`);
   }
 }
 
@@ -211,7 +211,9 @@ function setupSheet(data) {
   const inner = $('#sheet-inner');
   const items = new Map(data.sections.flatMap((s) => (s.items || []).map((it) => [it.id, { ...it, section: s }])));
   const { deliveroo, justeat } = data.business.order;
-  let lastTrigger;
+  let lastTrigger, anchor = null;
+  // We handle scroll ourselves – stops the browser jumping when the Back entry is popped.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
   const open = (id, trigger) => {
     const it = items.get(id);
@@ -234,6 +236,8 @@ function setupSheet(data) {
         <p class="sheet__note">Allergies? Please speak to us before ordering.</p>
       </div>`;
     inner.scrollTop = 0;
+    // Remember exactly where the tapped item sat on screen so closing puts it back there.
+    anchor = { el: trigger, top: trigger.getBoundingClientRect().top, y: scrollY };
     sheet.showModal();
     history.pushState({ hbSheet: true }, '');
   };
@@ -245,9 +249,18 @@ function setupSheet(data) {
   sheet.addEventListener('click', (e) => {
     if (e.target === sheet || e.target.closest('[data-close]')) sheet.close();
   });
+  const restore = () => {
+    if (!anchor) return;
+    const { el, top, y } = anchor;
+    const target = el?.isConnected ? scrollY + el.getBoundingClientRect().top - top : y;
+    if (Math.abs(target - scrollY) > 1) scrollTo({ top: target, behavior: 'instant' });
+  };
   sheet.addEventListener('close', () => {
     if (history.state?.hbSheet) history.back(); // closed via ✕/backdrop/swipe – drop our history entry
     lastTrigger?.focus({ preventScroll: true });
+    restore();
+    requestAnimationFrame(restore); // and again after any late layout / history scroll restoration
+    setTimeout(() => { restore(); anchor = null; }, 120);
   });
   // Phone "Back" gesture/button closes the sheet instead of leaving the page
   addEventListener('popstate', () => { if (sheet.open) sheet.close(); });
@@ -283,7 +296,7 @@ function setupHeat(data) {
     txt.textContent = `${h.label}: ${notes[id] || ''}`;
   };
   sec.addEventListener('change', (e) => e.target.name === 'heat' && set(e.target.value));
-  set('hot');
+  set(data.defaultHeat || data.heat[0].id);
 }
 
 /* ---------- meal deal builder ---------- */
